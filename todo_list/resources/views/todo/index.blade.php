@@ -10,7 +10,15 @@
         <h1>Liste des tâches à accomplir</h1>
     </header>
     <main>
+        <button name="add-task-button" id="add-task-button">
+            Ajouter une tâche
+        </button>
+        <div id="tasksListContainer">
+            <ul>
 
+            </ul>
+        </div>
     </main>
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
