@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PriorityController;
+
 
 
 /*
@@ -26,3 +29,12 @@ Route::post("/tasks", [TaskController::class, "create"]);
 Route::get("/tasks/{id}", [TaskController::class, "read"])->where('id', '[0-9]+');
 Route::delete("/tasks/{id}", [TaskController::class, "delete"])->where('id', '[0-9]+');
 
+
+// CATEGORIES
+Route::get("/categories", [CategoryController::class, "list"]);
+Route::post("/categories", [CategoryController::class, "create"]);
+Route::get("/categories/{id}", [CategoryController::class, "read"])->where('id', '[0-9]+');
+
+// PRIORITIES
+Route::get("/priorities", [PriorityController::class, "list"]);
+Route::get("/priorities/{id}", [PriorityController::class, "read"])->where('id', '[0-9]+');
