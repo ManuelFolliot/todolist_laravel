@@ -15,6 +15,22 @@ const serveur = {
             throw new Error(error.message);
         }
     },
+    deleteTask: async function(id){
+        try{
+            const response = await fetch(`${this.url}/tasks/${id}`, {
+                method: "DELETE",
+            });
+
+            if(!response.ok){
+                throw new Error(`Fetch failed : ${response.status}`);
+            }
+
+            return response;
+            
+        }catch(error){
+            throw new Error(error.message);
+        }
+    }
 }
 
 export default serveur;

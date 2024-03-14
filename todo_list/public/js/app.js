@@ -1,5 +1,5 @@
-import './bootstrap';
-import task from './task';
+// import './bootstrap';
+import task from './task.js';
 const app = {
     init: async function(){
         task.init();
