@@ -23,11 +23,20 @@ const task = {
     },
     createTaskElement: function(task){
         const liElement = document.createElement("li");
+        liElement.classList.add("d-flex", "d-flex", "justify-content-start");
+        
         const pElement = document.createElement("p");
-        const deleteElement = document.createElement("div");
-
         pElement.textContent = task.name;
-        liElement.append(pElement);
+        
+        const deleteElement = document.createElement("div");
+        deleteElement.innerHTML= '<i class="bi bi-trash-fill"></i>';
+        deleteElement.classList.add("delete");
+        deleteElement.addEventListener("click", (event) => this.handleClickDelete(event, task.id));
+        
+        const editElement = document.createElement("div");
+        editElement.innerHTML = '<i class="bi bi-pen-fill"></i>';
+        
+        liElement.append(pElement, deleteElement, editElement);
 
         return liElement;
     },
