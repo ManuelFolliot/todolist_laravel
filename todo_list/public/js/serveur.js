@@ -30,6 +30,18 @@ const serveur = {
         }catch(error){
             throw new Error(error.message);
         }
+    },
+    getCategories: async function(){
+        try{
+            const response = await fetch(`${this.url}/categories`);
+            if(!response.ok){
+                throw new Error(`Fetch failed : ${response.status}`);
+            }
+            const categories = await response.json();
+            return categories;
+        }catch(error){
+            throw new Error(error.message);
+        }
     }
 }
 

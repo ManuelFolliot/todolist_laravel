@@ -11,7 +11,7 @@
     <title>Todo List</title>
 </head>
 
-<body>
+<body class="container">
     <header>
         <h1>Liste des tâches à accomplir</h1>
     </header>
@@ -19,11 +19,22 @@
         <button name="add-task-button" id="add-task-button">
             Ajouter une tâche
         </button>
-        <div id="tasksListContainer">
-            <ul>
+        <ul id="tasksListContainer">
 
-            </ul>
+        </ul>
+        <div class="form-container">
+            <form>
+                <h2>Nouvelle tâche</h2>
+                <label for="task-name">Nom de la tâche</label>
+                <input name="id" id="task-id" type="hidden">
+                <input name="name" id="task-name" placeholder="nom de la tâche" type="text" required>
+                <select name="category" id="category">
+
+                </select>
+                <button>Ajouter</button>
+            </form>
         </div>
+
     </main>
     <script type="module" src="{{ asset('js/app.js') }}"></script>
 </body>
